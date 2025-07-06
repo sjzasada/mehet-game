@@ -194,13 +194,13 @@ export default function MehenGame() {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      document.title = "Mehen: The Ancient Egyptian Game";
+      document.title = "Mehen: The Charlie's Egyptian Game";
     }
   }, []);
 
   return (
     <div className="flex flex-col items-center min-h-screen bg-yellow-50 py-8">
-      <h1 className="text-3xl font-bold mb-2 text-yellow-900 drop-shadow">Mehen: The Ancient Egyptian Game</h1>
+      <h1 className="text-3xl font-bold mb-2 text-yellow-900 drop-shadow">Mehen: Charlie's Ancient Egyptian Game</h1>
       <p className="mb-6 text-yellow-800">Race to the snake's head! Pharaoh vs. Mummie</p>
       {/* Player names and icons row */}
       <div className="flex flex-row items-center justify-center gap-10 mb-6">
