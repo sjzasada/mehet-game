@@ -15,7 +15,7 @@ const HEAD_RY = 32;
 
 const initialPlayers = [
   { name: "", piece: "pharaoh", position: 0, color: "#d4af37" },
-  { name: "", piece: "mummie", position: 0, color: "#b0b0b0" },
+  { name: "", piece: "mummy", position: 0, color: "#b0b0b0" },
 ];
 
 // Pharaoh and Mummie facts
@@ -32,7 +32,7 @@ const PHARAOH_FACTS = [
   "Pharaohs were often buried with treasures, food, and even boats for their journey to the afterlife."
 ];
 
-const MUMMIE_FACTS = [
+const MUMMY_FACTS = [
   "Mummification in Egypt started around 2600 BCE and could take up to 70 days.",
   "The process involved removing internal organs, drying the body with natron, and wrapping it in linen.",
   "Not just people—cats, dogs, crocodiles, and birds were also mummified.",
@@ -49,7 +49,7 @@ function getRandomFact(piece: string) {
   if (piece === "pharaoh") {
     return PHARAOH_FACTS[Math.floor(Math.random() * PHARAOH_FACTS.length)];
   } else {
-    return MUMMIE_FACTS[Math.floor(Math.random() * MUMMIE_FACTS.length)];
+    return MUMMY_FACTS[Math.floor(Math.random() * MUMMY_FACTS.length)];
   }
 }
 
@@ -62,7 +62,7 @@ function getPieceIcon(piece: string) {
       </svg>
     );
   }
-  if (piece === "mummie") {
+  if (piece === "mummy") {
     return (
       <svg width="36" height="36" viewBox="0 0 28 28">
         {/* Mummy head */}
@@ -201,14 +201,14 @@ export default function MehenGame() {
   return (
     <div className="flex flex-col items-center min-h-screen bg-yellow-50 py-8">
       <h1 className="text-3xl font-bold mb-2 text-yellow-900 drop-shadow">Mehen: Charlie's Ancient Egyptian Game</h1>
-      <p className="mb-6 text-yellow-800">Race to the snake's head! Pharaoh vs. Mummie</p>
+      <p className="mb-6 text-yellow-800">Race to the snake's head! Pharaoh vs. Mummy</p>
       {/* Player names and icons row */}
       <div className="flex flex-row items-center justify-center gap-10 mb-6">
         {players.map((p, i) => (
           <div key={i} className="flex flex-col items-center">
             <div className="mb-1">{getPieceIcon(p.piece)}</div>
             <div className="font-semibold text-yellow-900 text-lg px-3 py-1 rounded bg-yellow-100 shadow">
-              {p.name || (p.piece === "pharaoh" ? "Pharaoh" : "Mummie")}
+              {p.name || (p.piece === "pharaoh" ? "Pharaoh" : "Mummy")}
             </div>
           </div>
         ))}
@@ -218,7 +218,7 @@ export default function MehenGame() {
           <div className="flex gap-4">
             {players.map((p, i) => (
               <div key={i} className="flex flex-col items-center">
-                <span className="mb-1 font-semibold text-yellow-900">{p.piece === "pharaoh" ? "Pharaoh" : "Mummie"}</span>
+                <span className="mb-1 font-semibold text-yellow-900">{p.piece === "pharaoh" ? "Pharaoh" : "Mummy"}</span>
                 <input
                   className="border rounded px-2 py-1 text-center"
                   placeholder={`Player ${i + 1} Name`}
@@ -432,7 +432,7 @@ export default function MehenGame() {
             {winnerFact && winnerPiece && (
               <div className="mb-4 text-yellow-900 text-center max-w-md text-lg italic">
                 <span className="font-bold not-italic">
-                  {winnerPiece === "pharaoh" ? "Pharaoh fact: " : "Mummie fact: "}
+                  {winnerPiece === "pharaoh" ? "Pharaoh fact: " : "Mummy fact: "}
                 </span>
                 {winnerFact}
               </div>
